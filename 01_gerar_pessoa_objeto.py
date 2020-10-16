@@ -28,7 +28,7 @@ class Pessoa:
         return ''.join(map(str, n))
 
     def gerarNome(self, sexo):
-        file = 'nomes_masculinos.csv' if sexo == "M" else 'nomes_femininos.csv'
+        file = '01_nomes_masculinos.csv' if sexo == "M" else '01_nomes_femininos.csv'
         rand = random.randint(0,1000)
         with open(file, 'r') as lista:
             for i, line in enumerate(lista):
@@ -38,7 +38,7 @@ class Pessoa:
 
     def gerarSobrenome(self):
         rand = random.randrange(90) if random.random() > 0.5 else random.randrange(1800)
-        with open('listadesobrenomesbrasileiros.txt', 'r', encoding = 'utf=8') as nomes:
+        with open('01_listadesobrenomesbrasileiros.txt', 'r', encoding = 'utf=8') as nomes:
             for i, line in enumerate(nomes):
                 if i == rand:
                     return line.split(',')[0]
